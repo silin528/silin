@@ -1,0 +1,17 @@
+一、项目前期准备
+	1.编写一个过滤器EncodingFilter.java来统一全站编码
+	2.编写一个判断当前用户是否具有有台管理员的资格（AdminPrivilegeFilter.java）
+		如果有就放行，没有就跳转到错误界面
+	3.对两个java文件在web.xml中进行配置（filter）
+	4.编写DataSourceUtils工具类
+	5.编写MyBeanUtils工具类，对数据进行封装
+二、项目编码
+	1>、用户注册模块
+			1.编写一个注册的jsp（register.jsp）,action中的/register是映射RegisterServlet.java的类
+			2.编写一个RegisterServlet.java,其中包含调用UserService.java
+			3.编写一个UserService.java
+			4.编写一个UserDao.java该类具有添加用户、根据用户名与密码查找用户	(存在问题)已解决
+	2>、登录模块
+			1.编写一个登录的jsp（login.jsp）,action中的/login是映射LoginServlet.java的类
+			2.编写一个LoginServlet.java，其中获取页面参数，包含调用UserService.java,判断是否为超级用户，是就跳转到后台
+			3.修改UserService.java

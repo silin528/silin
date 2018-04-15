@@ -1,0 +1,38 @@
+ul{
+	display:inline-block;
+}
+.header{
+	margin:0 auto;
+	padding-top: 10px; 
+	height: 30px;
+	background-color: #ccc;
+}
+.header1{
+	margin:0 auto; 
+	height: 60px;
+	margin-bottom: 40px;
+}
+li{ display:inline-block; list-style:none;}
+a{text-decoration: none;}
+
+.login{
+	float: right;
+	margin-right: 200px;
+}
+.name{width: 250px; height: 30px;margin-top: 20px;}
+
+.menu{background-color:red; height: 45px;}
+.menu_a{margin-left:40px; color:#fff; font-size:20px; text-decoration:none; line-height: 45px;}
+
+.product{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.navbar-inverse {
+    background-color: rgb(238,238,238);
+}
+.box:hover{
+	border:1px solid #000;
+}
+
+
