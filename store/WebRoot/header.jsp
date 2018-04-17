@@ -35,7 +35,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a id="_image2" itemprop="image" class="navbar-brand" title="engati" href="${pageContext.request.contextPath}">
-                        <img src="#" class="header-engt-img" title="silin" alt="silin">
+                        <img class="header-engt-img" title="silin" alt="silin">
                     </a>
                 </div>
                 <!-- /.navbar-header -->

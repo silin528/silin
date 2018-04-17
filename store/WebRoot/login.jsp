@@ -13,10 +13,11 @@
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-
-	<link href="${pageContext.request.contextPath }/css/bootstrap.min.css" rel="stylesheet">
-    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="${pageContext.request.contextPath }/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
+    <script src="${pageContext.request.contextPath}/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js" type="text/javascript"></script>    
+ 
   </head>
   
   <body>
@@ -29,14 +30,14 @@
 					<div>&nbsp;</div>
 					<form class="form-horizontal" action="${pageContext.request.contextPath}/servlet/UserServlet?method=LoginServlet" method="post">
 						<div class="form-group">
-							<label for="username" class="col-sm-2 control-label">用户名</label>
+							<label for="username" class="col-xs-2  control-label">用户名</label>
 							<div class="col-xs-6 col-sm-8">
 								<input type="text" class="form-control" id="username"  name="userName"
 									placeholder="请输入用户名">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="inputPassword3" class="col-sm-2 control-label" >密码</label>
+							<label for="inputPassword3" class="col-xs-2 control-label" >密码</label>
 							<div class="col-xs-6 col-sm-8 ">
 								<input type="password" class="form-control"  name="password"
 									placeholder="请输入密码">

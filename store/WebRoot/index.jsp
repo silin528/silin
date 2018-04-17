@@ -7,15 +7,7 @@
     <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
     <script src="${pageContext.request.contextPath}/js/jquery-1.11.0.min.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/js/bootstrap.min.js" type="text/javascript"></script>    
- <script type="text/javascript">
-	function search(){
-		//获得购买的商品的数量
-		var buyNum = $("#buyNum").val();
-		location.href="${pageContext.request.contextPath}/servlet/ProductServlet?method=search&search="+buyNum;
-		};
-
-
-</script>
+ 
   </head>
   
   <body>
