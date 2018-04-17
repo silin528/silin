@@ -6,10 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
     <script src="${pageContext.request.contextPath}/js/jquery-1.11.0.min.js" type="text/javascript"></script>
-    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js" type="text/javascript"></script>
-   
-    
+    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js" type="text/javascript"></script>    
+ <script type="text/javascript">
+	function search(){
+		//获得购买的商品的数量
+		var buyNum = $("#buyNum").val();
+		location.href="${pageContext.request.contextPath}/servlet/ProductServlet?method=search&search="+buyNum;
+		};
+
+
+</script>
   </head>
+  
   <body>
     <div class="container-fluid">
         <!-- 导入网页上部 -->
@@ -27,7 +35,11 @@
 				</p>
 				<div class="search-wraper" >
 					<div class="form-group">
-						<input name="search" style="border: 3px #888888 solid" class="form-control search clearable" placeholder="请输入搜索……" autocomplete="off" autofocus="" tabindex="0" autocorrect="off" autocapitalize="off" spellcheck="false">
+						<form action="${pageContext.request.contextPath}/servlet/ProductServlet" method="get">
+						 	<input type="hidden" name="method" value="searchServlet">
+							<input name="search" style="border: 3px #888888 solid" class="form-control search clearable" placeholder="请输入搜索……" autocomplete="off" autofocus="" tabindex="0" autocorrect="off" autocapitalize="off" spellcheck="false">
+							<input value="搜索" type="submit">
+						</form>
 					</div>
 				</div>
 			</div>

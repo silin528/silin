@@ -54,7 +54,6 @@
 
 		<!-- 判断购物车中是否有商品 -->
 		<c:if test="${!empty cart.cartItems }">
-			
 			<div class="container-fluid">
 				<div class="">
 					<div style=" margin-top:80px;">
@@ -68,7 +67,6 @@
 									<th>小计</th>
 									<th>操作</th>
 								</tr>
-								
 								<c:forEach items="${cart.cartItems }" var="entry">
 								
 									<tr class="active">
@@ -96,7 +94,6 @@
 						</table>
 					</div>
 				</div>
-	
 				<div >
 					<div class="text-left">
 						<em style="color:#ff6600;">
@@ -111,7 +108,6 @@
 						</a>
 					</div>
 				</div>
-	
 			</div>
 		</c:if>
 		<c:if test="${empty cart.cartItems }">

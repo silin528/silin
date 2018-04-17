@@ -14,18 +14,18 @@ public class AdminService {
 		AdminDao dao = new AdminDao();
 		return dao.findAllCategory();
 	}
-
+//	保存商品
 	public void saveProduct(Product product) throws SQLException {
 		AdminDao dao = new AdminDao();
 		dao.saveProduct(product);
 		
 	}
-
+//	查看后台商品列表
 	public List<Product> findAdminProcductList() throws SQLException {
 		AdminDao dao = new AdminDao();
 		return dao.findAdminProcductList();
 	}
-
+//	删除分类
 	public void delCategoryServlet(String cid) throws SQLException {
 		AdminDao dao = new AdminDao();
 		dao.delCategoryServlet(cid);

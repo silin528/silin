@@ -20,11 +20,11 @@ public class AdminDao {
 		return runner.query(sql, new BeanListHandler<Category>(Category.class));
 		
 	}
-
+//保存商品
 	public void saveProduct(Product product) throws SQLException {
 		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
-		String sql = "insert into products values(?,?,?,?,?,?,?,?,?)";
-		runner.update(sql,product.getPid(),product.getPname(),product.getShop_price(),product.getPimage(),product.getPdate(),product.getIs_hot(),product.getPdesc(),product.getPflag(),product.getCategory().getCid());
+		String sql = "insert into products values(?,?,?,?,?,?,?,?,?,?)";
+		runner.update(sql,product.getPid(),product.getPname(),product.getPnum(),product.getShop_price(),product.getPimage(),product.getPdate(),product.getIs_hot(),product.getPdesc(),product.getPflag(),product.getCategory().getCid());
 		
 	}
 
@@ -97,9 +97,8 @@ public class AdminDao {
 	//后台商品编辑
 	public void adminEditProduct(Product product) throws SQLException {
 		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
-		String sql = "update products set pname=? shop_price=? pimage=? is_hot=? pdesc=? where pid=?";
-		System.out.println( product.getPname()+product.getShop_price()+product.getPimage()+product.getIs_hot()+product.getPdesc()+product.getPid());
-		runner.update(sql, product.getPname(),product.getShop_price(),product.getPimage(),product.getIs_hot(),product.getPdesc(),product.getPid());
+		String sql = "update products set pname=? pnum=? shop_price=? pimage=? is_hot=? pdesc=? where pid=?";
+		runner.update(sql, product.getPname(),product.getpNum(),product.getShop_price(),product.getPimage(),product.getIs_hot(),product.getPdesc(),product.getPid());
 		
 	}
 

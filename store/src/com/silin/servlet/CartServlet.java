@@ -71,7 +71,7 @@ public class CartServlet extends HttpServlet {
 			if(cartItems.containsKey(pid)){
 				//取出原有的商品数量
 				CartItem cartItem = cartItems.get(pid);
-				//修改树量
+				//修改数量
 				int oldBuyNum = cartItem.getBuyNum();
 				oldBuyNum += buyNum;
 				cartItem.setBuyNum(oldBuyNum);

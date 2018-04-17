@@ -6,6 +6,7 @@ import java.util.Locale.Category;
 public class Product {
 	//产品Javabean
 	private String pid; //产品id
+	private String pnum;//产品库存
 	private String pname;//产品名称
 	private String market_price;//产品市价
 	private Double shop_price;//产品价格
@@ -83,6 +84,12 @@ public class Product {
 	}
 	public void setpNum(int pNum) {
 		this.pNum = pNum;
+	}
+	public String getPnum() {
+		return pnum;
+	}
+	public void setPnum(String pnum) {
+		this.pnum = pnum;
 	}
 	
 }

@@ -1,11 +1,11 @@
 package com.silin.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import javax.mail.MessagingException;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -103,22 +103,16 @@ public class UserServlet extends HttpServlet {
 				//判断是否是后台用户如果是跳转到后台
 //				System.out.println("name:" + loginUser.getUserName());
 				//自动登录
-//				if("null".equals(request.getParameter("autoLogin"))){
-//					Cookie autoLoginCookie = new Cookie("autoLoginCookie","");
-//					autoLoginCookie.setPath("/");
-////					autoLoginCookie.setMaxAge(0);
-//					response.addCookie(autoLoginCookie);
-//				}else{
-//					
-////					//如果勾选发送cookie
-//					Cookie autoLoginCookie = new Cookie("autoLoginCookie",loginUser.getUserName() + "@" + user.getPassword());
-//					autoLoginCookie.setPath("/");
-//					autoLoginCookie.setMaxAge(60*60*24);
-//					response.addCookie(autoLoginCookie);
-//				}
+				if("on".equals(request.getParameter("autoLogin"))){			
+					//如果勾选发送cookie
+					Cookie autoLoginCookie = new Cookie("autoLoginCookie",loginUser.getUserName() + "@" + user.getPassword());
+					autoLoginCookie.setPath("/");
+					autoLoginCookie.setMaxAge(60*60*24);
+					response.addCookie(autoLoginCookie);
+				}
 //				//记住用户密码
 //				String remember = request.getParameter("remembe");
-//				if("1".equals(remember)){
+//				if("on".equals(remember)){
 //					Cookie remembermeCookie = new Cookie("remembermeCookie", user.getUserName());
 //					remembermeCookie.setPath("/");
 //					remembermeCookie.setMaxAge(60*60*24);
@@ -158,8 +152,12 @@ public class UserServlet extends HttpServlet {
 			throws ServletException, IOException {
 		//1.将session用户状态信息移除
 		request.getSession().removeAttribute("loginUser");
-		//2.重定向到页面
-		response.sendRedirect(request.getContextPath() + "/servlet/UserServlet?method=LoginServlet");
+		//2.将存储在客户端的cookie删除
+		Cookie autoLoginCookie = new Cookie("autoLoginCookie","");
+		autoLoginCookie.setMaxAge(0);
+		response.addCookie(autoLoginCookie);
+		//3.重定向到页面
+		response.sendRedirect(request.getContextPath() + "/login.jsp");
 	}
 
 }

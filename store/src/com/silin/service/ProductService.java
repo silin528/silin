@@ -166,6 +166,13 @@ public class ProductService {
 		}
 		return orderItemList;
 	}
+	//ËÑË÷À¸
+	public Product searchName(String pname) throws SQLException {
+		ProductDao dao = new ProductDao();
+		Product product = dao.searchName(pname);
+		System.out.println("456");
+		return product; 
+	}
 
 	
 

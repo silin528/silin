@@ -47,6 +47,12 @@
 					<td class="ta_01" bgColor="#ffffff">
 						<input type="text" name="shop_price" value="${adminEditProductById.shop_price }" id="userAction_save_do_logonName" class="bg"/>
 					</td>
+					<td width="18%" align="center" bgColor="#f5fafe" class="ta_01">
+						商品数量：
+					</td>
+					<td class="ta_01" bgColor="#ffffff">
+						<input type="text" name="pnum" value="${adminEditProductById.pnum }"  class="bg"/>
+					</td>
 				</tr>
 				<tr>
 					<td width="18%" align="center" bgColor="#f5fafe" class="ta_01">

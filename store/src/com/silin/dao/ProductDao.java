@@ -151,6 +151,13 @@ public class ProductDao {
 			List<Map<String,Object>> mapList = runner.query(sql, new MapListHandler(),oid);
 			return mapList;
 		}
+
+		public Product searchName(String pname) throws SQLException {
+			QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
+			String sql = "select * from products where pname like '%"+pname+"%' ";
+			Product product = runner.query(sql, new BeanHandler<Product>(Product.class));
+			return product;
+		}
 	
 	
 
